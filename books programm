@@ -1,0 +1,118 @@
+ // Working of Methods
+
+            Console.Write("\n Enter the Number of books : ");
+            int Length = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("\n Plz Enter the book names :-\n ");
+
+            string[] bookNames = new string[Length];
+
+            for (int i = 0; i < Length; i++)
+            {
+                Console.Write("  ({0}) : ", i + 1);
+                bookNames[i] = Console.ReadLine();
+
+            }
+
+            decimal[] priceArray = new decimal[Length];
+
+
+            for (int i = 0; i < Length; i++)
+            {
+
+                if (bookNames[i] == "itc" || bookNames[i] == "ITC")
+                {
+                    priceArray[i] = 300;
+                }
+
+                if (bookNames[i] == "programming" || bookNames[i] == "Programming")
+                {
+                    priceArray[i] = 400;
+                }
+                if (bookNames[i] == "Calculus" || bookNames[i] == "calculus")
+                {
+                    priceArray[i] = 500;
+                }
+
+
+            }
+            decimal totalPrice = 0;
+
+            foreach (int price in priceArray)
+            {
+                totalPrice = totalPrice + price;
+            }
+
+            Console.WriteLine("\n\n The total Price of books is : {0} ", totalPrice);
+            Console.ReadLine();
+
+
+            
+
+         //Changing Book Progam to make it more cool
+
+            Console.Write("\n Enter the Number of books : ");
+            int Length = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("\n Plz Enter the book names :-\n ");
+
+            string[] bookNames = new string[Length];
+
+            for (int i = 0; i < Length; i++)
+            {
+                Console.Write("  ({0}) : ", i + 1);
+                bookNames[i] = Console.ReadLine();
+
+
+            }
+
+            decimal[] PriceArray = CheckBookPrice( bookNames,Length);
+
+            GetPrice(PriceArray);
+
+
+
+        }
+
+        private static decimal[] CheckBookPrice( string[] bookNames, int numberOfBook)
+        {
+            decimal[] priceArray = new decimal[numberOfBook];
+
+
+            for (int i = 0; i < numberOfBook; i++)
+            {
+
+                if (bookNames[i] == "itc" || bookNames[i] == "ITC")
+                {
+                    priceArray[i] = 300;
+                }
+
+                if (bookNames[i] == "programming" || bookNames[i] == "Programming")
+                {
+                    priceArray[i] = 400;
+                }
+                if (bookNames[i] == "Calculus" || bookNames[i] == "calculus")
+                {
+                    priceArray[i] = 500;
+
+                }
+                
+            }
+            return priceArray;
+       
+        }
+        private static void GetPrice(decimal[]PA)
+        {
+            decimal totalPrice = 0;
+
+            foreach (int price in PA)
+            {
+                totalPrice = totalPrice + price;
+            }
+
+            Console.WriteLine("\n\n The total Price of books is : {0} ", totalPrice);
+            Console.ReadLine();
+
+
+        }
+    
